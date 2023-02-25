@@ -1,0 +1,51 @@
+<a href="/">Homepage</a>
+  <fieldset>
+    <h1>All Librarians</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Employee Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Focus</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each employees}}
+        <tr>
+          <td>{{employeeID}}</td>
+          <td>{{firstName}}</td>
+          <td>{{lastName}}</td>
+          <td>{{focus}}</td>
+          <td><button type="button" onclick="">Edit</button><button type="button" name="delete_librarian" onclick="deleteLibrarian({{employeeID}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <fieldset>
+      <h1>Add a New Librarian</h1>
+      <form id="addLibrarian" action="/employees" method="post">
+          <label for="lib_fName">First Name:</label>
+          <input type="text" id="lib_fName" name="lib_fName">
+          <label for="lib_lName">Last Name:</label>
+          <input type="text" id="lib_lName" name="lib_lName">
+          <label for="focus">Focus:</label>
+          <select name="focus" id="focus">
+            {{#each genres}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+          <button>Submit</button>
+      </form>
+    </fieldset>
+  </fieldset>
+  <br>
+  <br>
+  <a href="/patrons">Click here to manage Patrons</a>
+  <br>
+  <a href="/genres">Click here to manage Genres</a>
+  <br>
+  <a href="/rooms">Click here to manage Rooms</a>
+  <br>
+  <a href="/books">Click here to manage Books</a>

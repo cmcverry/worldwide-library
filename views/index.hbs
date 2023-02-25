@@ -1,0 +1,75 @@
+<!-- index.hbs -->
+<button type="button" name="login">Login</button>
+    <h1>World Wide Library</h1>
+    <fieldset>
+        <h2>Books Catalogue:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each books}}
+                <tr>
+                    <td>{{isbn}}</td>
+                    <td>{{title}}</td>
+                    <td>{{author}}</td>
+                    <td>{{genre}}</td>
+                    <td><button type="button" onlick="">Borrow</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <br>
+        <fieldset>
+            <h2>Search Catalogue:</h2>
+            <h3>Fill one or more fields in search bar.</h3>
+            <form action="" method=""> <!-- action and method to be added-->
+                <label for="isbn">ISBN:</label>
+                <input type="text" id="isbn" name="isbn">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre">
+                    <option></option>
+                    <option>Science fiction</option>
+                    <option>Mystery</option>
+                    <option>Historical fiction</option>
+                </select>
+                <button type="button" onclick="" >Search</button>
+            </form>
+        </fieldset>
+    </fieldset>
+    <br>
+    <fieldset>
+        <h2>Available virtual rooms:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Room</th>
+                    <th>Capacity</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each rooms}}
+                <tr>
+                    <td>{{roomNumber}}</td>
+                    <td>{{capacity}}</td>
+                    <td><button type="button" onlick="">Reserve</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </fieldset>
+    <br>
+    <p>New Patron? <a href="/create_patron">Create an account</a></p>
+    <a href="/patron_account">Patron Account Page</a>
+    <a href="/employees">Librarian Access</a>

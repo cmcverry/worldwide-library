@@ -1,0 +1,30 @@
+<a href="/">Homepage</a>
+    <a href="/employees">Back to Librarian Access</a>
+    <fieldset>
+        <h1>All Patrons</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Library ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Reservation</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each patrons}}
+            <tr>
+              <td>{{libraryID}}</td>
+              <td>{{firstName}}</td>
+              <td>{{lastName}}</td>
+              <td>{{reservation}}</td>
+              <td>
+                <button type="button" name="edit_patron">Edit</button>
+                <button type="button" name="delete_patron" onclick="deletePatron({{libraryID}})">Delete</button>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </fieldset>
